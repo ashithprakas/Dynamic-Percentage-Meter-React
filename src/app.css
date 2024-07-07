@@ -1,0 +1,58 @@
+.skill {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.outer {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  padding: 20px;
+}
+
+.inner {
+  height: 160px;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
+
+.number {
+  font-weight: 600;
+  color: #555;
+}
+
+circle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 20px;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: animateSlider 2s linear forwards;
+}
+
+svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.skill-container {
+  position: relative;
+}
+
+@keyframes animateSlider {
+  100% {
+    stroke-dashoffset: 157.5;
+  }
+}
