@@ -1,11 +1,25 @@
-const DynamicSlider = () => {
+import { useEffect, useState } from "preact/hooks";
+
+const DynamicSlider = ({}) => {
+  const [offset, setOffset] = useState(600);
+  const [circleLength, setCircleLength] = useState(600);
+  const percentage = 50;
+  useEffect(() => {
+    const progressCircle = document.getElementById(
+      "progressCircle"
+    ) as HTMLElement;
+    const offsetValue = circleLength - (circleLength * percentage) / 100;
+    setOffset(offsetValue);
+    progressCircle.style.transition = "stroke-dashoffset 2s ease-in-out";
+  });
+
   return (
     <div className="skill-container">
       <div className="skill">
         <div className="outer">
           <div className="inner">
             <div className="number" id="number">
-              65%
+              {percentage}%
             </div>
           </div>
         </div>
@@ -23,7 +37,17 @@ const DynamicSlider = () => {
             <stop offset="110%" stop-color="#9733ee" />
           </linearGradient>
         </defs>
-        <circle cx={100} cy={100} r={90} stroke-linecap="round"></circle>
+        <circle
+          id="progressCircle"
+          cx="100"
+          cy="100"
+          r="90"
+          stroke-linecap="round"
+          style={{
+            strokeDasharray: circleLength,
+            strokeDashoffset: offset,
+          }}
+        ></circle>
       </svg>
     </div>
   );

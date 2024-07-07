@@ -36,9 +36,6 @@ circle {
   fill: none;
   stroke: url(#GradientColor);
   stroke-width: 20px;
-  stroke-dasharray: 600;
-  stroke-dashoffset: 600;
-  animation: animateSlider 2s linear forwards;
 }
 
 svg {
@@ -49,10 +46,4 @@ svg {
 
 .skill-container {
   position: relative;
-}
-
-@keyframes animateSlider {
-  100% {
-    stroke-dashoffset: 157.5;
-  }
 }
