@@ -7,7 +7,8 @@ export function App() {
 
   return (
     <div className="app">
-      <DynamicSlider />
+      <DynamicSlider percentage={20} />
+      <DynamicSlider percentage={40} />
     </div>
   );
 }

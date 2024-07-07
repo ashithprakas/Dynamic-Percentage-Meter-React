@@ -1,9 +1,9 @@
 import { useEffect, useState } from "preact/hooks";
+import React from "react";
 
-const DynamicSlider = ({}) => {
+const DynamicSlider: React.FC<{ percentage: number }> = ({ percentage }) => {
   const [offset, setOffset] = useState(600);
   const [circleLength, setCircleLength] = useState(600);
-  const percentage = 50;
   useEffect(() => {
     const progressCircle = document.getElementById(
       "progressCircle"
